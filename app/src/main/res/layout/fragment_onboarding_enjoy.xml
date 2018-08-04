@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <TextView
+    android:id="@+id/tv_enjoy"
+    style="@style/TextView.Onboarding.Title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/onboarding_enjoy"
+    app:layout_constraintBottom_toTopOf="@+id/bt_register"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/bt_register"
+    style="@style/Button.Blue"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="0dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="32dp"
+    android:text="@string/onboarding_register"
+    app:layout_constraintBottom_toTopOf="@id/bt_try"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_enjoy" />
+
+  <Button
+    android:id="@+id/bt_try"
+    style="@style/Button.Transparent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="32dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="0dp"
+    android:text="@string/onboarding_try"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/bt_register" />
+
+</android.support.constraint.ConstraintLayout>

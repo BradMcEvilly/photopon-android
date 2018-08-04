@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <RelativeLayout
+    android:id="@+id/layout_notifications"
+    style="@style/Layout.Title.Wallet">
+
+    <ImageButton
+      android:id="@+id/ib_hamburger"
+      style="@style/ImageButton.TitleBar.Hamburger" />
+
+    <TextView
+      style="@style/TextView.FragmentTitle"
+      android:text="@string/wallet_title" />
+
+  </RelativeLayout>
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_view"
+    style="@style/RecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/layout_notifications" />
+
+  <TextView
+    android:id="@+id/tv_education_tip"
+    style="@style/TextView.EmptyList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="@string/wallet_empty" />
+
+</RelativeLayout>

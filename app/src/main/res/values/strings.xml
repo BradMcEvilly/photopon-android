@@ -1,0 +1,121 @@
+<resources>
+  <!--Shared-->
+  <string name="app_name">Photopon</string>
+  <string name="action_settings">Settings</string>
+  <string name="generic_error_title">Oops!</string>
+  <string name="generic_error_message">There was an error. Please try again.</string>
+  <string name="storage_error">There was an error saving the Photopon to storage. Please try again.</string>
+  <string name="camera_error">There was an error initializing the camera. Please try again.</string>
+  <string name="add_friend">Add Friend</string>
+  <string name="add_more_friends">Add More Friends</string>
+  <string name="are_you_sure">Are you sure?</string>
+  <string name="cancel">Cancel</string>
+  <string name="redeem">Redeem</string>
+  <string name="plural_s">s</string>
+
+  <!-- Menu -->
+  <string name="menu_notifications">Notifications</string>
+  <string name="menu_friends">Friends</string>
+  <string name="menu_gifts">Gifts</string>
+  <string name="menu_wallet">Wallet</string>
+  <string name="menu_create">Create Photopons</string>
+  <string name="menu_sent_photopons">Sent Photopons</string>
+  <string name="menu_log_out">Sign out</string>
+
+  <!--Onboarding-->
+  <string name="onboarding_welcome">Welcome</string>
+  <string name="onboarding_subtitle_1">Turn your photos into gifts for friends</string>
+  <string name="onboarding_subtitle_2">Access private, members-only coupons</string>
+  <string name="onboarding_location">Photopon would like to access locations services to display nearby gifts &amp; coupons</string>
+  <string name="onboarding_camera">Photopon would like to access the camera to take pictures for your Photopons</string>
+  <string name="onboarding_storage">Photopon would like to access your phone\'s storage to make your Photopons from your pictures</string>
+  <string name="onboarding_enabled">Already Enabled</string>
+  <string name="onboarding_enable_location">Enable Location Services</string>
+  <string name="onboarding_enable_storage">Enable Storage Access</string>
+  <string name="onboarding_enable_camera">Enable Camera Access</string>
+  <string name="onboarding_enjoy">Enjoy Photopon!</string>
+  <string name="onboarding_register">Register</string>
+  <string name="onboarding_permissions">Permissions</string>
+  <string name="onboarding_try">Or try it out!</string>
+  <string name="onboarding_all_permissions">In order to enjoy Photopon, you must grant all of the following permissions.</string>
+
+  <!-- Validate Phone -->
+  <string name="verify_phone">Phone Number</string>
+  <string name="verify_description">We need to check if this is really you &#128521;</string>
+  <string name="verify_hint">mobile number</string>
+  <string name="verify_button">Send Code via SMS</string>
+  <string name="verify_later">Later</string>
+  <string name="verify_invalid">Please enter a phone number</string>
+  <string name="verify_code_title">Verify Code</string>
+  <string name="verify_code_description">A verification code has been sent to your phone number. Please enter it below.</string>
+  <string name="verify_code_hint">verification code</string>
+  <string name="verify_code_button">Verify My Code &#128275;</string>
+  <string name="verify_sending_code">Sending verification code…</string>
+  <string name="verify_resend">Resend Code</string>
+  <string name="verify_username">Username</string>
+  <string name="verify_username_description">Enter your username. It will be shown to other users for your identification.</string>
+  <string name="verify_username_hint">Name</string>
+  <string name="verify_username_button">Get Started &#128640;</string>
+  <string name="verify_welcome_back">Welcome Back</string>
+  <string name="verify_welcome_back_name" formatted="false">Welcome Back %s</string>
+  <string name="verify_welcome_back_description">You are all set up to use Photopon!</string>
+  <string name="verify_username_inuse">Username is alreay used. Please pick another one.</string>
+
+  <!-- Make photopon -->
+  <string name="make_photopon_education">Hello, when you are ready to start creating your first Photopon, use the shutter button!</string>
+
+  <!-- Notifications fragment -->
+  <string name="notifications_empty">You don\'t have any notifications\n&#128718;</string>
+  <string name="notifications_title">Notifications</string>
+  <string name="notifications_added_you" formatted="true">%s added you</string>
+  <string name="notifications_add_back">You can add them back</string>
+  <string name="notifications_messaged_you" formatted="true">%s messaged you</string>
+
+  <!-- My Friends -->
+  <string name="my_friends_title">My Friends</string>
+  <string name="my_friends_empty">You don\'t have any friends &#128107;</string>
+  <string name="my_friends_friends">Friends</string>
+  <string name="my_friends_pending">Pending Friends</string>
+  <string name="my_friends_shared_used" formatted="true">%d gifts shared • %d used</string>
+
+  <!-- Gifts -->
+  <string name="gifts_title">Gifts</string>
+  <string name="gifts_empty">You don\'t have any coupons</string>
+  <string name="gifts_expiration">Expires %s</string>
+  <string name="gifts_button_get">Get &#128184;</string>
+  <string name="gifts_button_give">Give &#128588;</string>
+
+  <!-- Wallet -->
+  <string name="wallet_title">Wallet</string>
+  <string name="wallet_empty">Empty wallet</string>
+
+  <!-- Settings -->
+  <string name="settings_title">Settings</string>
+  <string name="settings_number">Verified phone number</string>
+  <string name="settings_merchant">Become Merchant</string>
+  <string name="settings_change_number">Change Phone Number</string>
+
+  <!-- Draw photopon -->
+  <string name="draw_uploading">Uploading Photopon…</string>
+
+  <!-- Share gift -->
+  <string name="share_gift_title">Share gift</string>
+  <string name="share_gift_empty">You don\'t have any friends &#128107; to share with</string>
+  <string name="share_gift_confirm">You can only redeem a coupon once. Are you sure you want to redeem it now?</string>
+  <string name="share_gift_not_enough_long" formatted="true">You need to share this coupon with %d friend%s before you can get it.</string>
+  <string name="share_gift_share_it">Share it</string>
+  <string name="share_gift_share_now">Share Now!</string>
+  <string name="share_gift_not_enough">Not enough shares</string>
+  <string name="share_gift_success">Photopon was saved successfully!</string>
+
+  <!-- Add Friend -->
+  <string name="add_friend_title">Add Friend</string>
+  <string name="add_friend_hint">Enter Username or Email</string>
+  <string name="add_friend_photopon_users">Photopon Users</string>
+  <string name="add_friend_my_friends">My Friends</string>
+  <string name="add_friend_address_book">Users from Address Book</string>
+  <string name="add_friend_added" formatted="false">%s is your friend now!</string>
+
+  <!-- Chat -->
+  <string name="hint_enter_message">Write a message</string>
+</resources>

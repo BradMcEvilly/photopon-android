@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <TextView
+    style="@style/TextView.ValidatePhone.Title.Small"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:text="@string/verify_welcome_back" />
+
+  <TextView
+    android:id="@+id/tv_username"
+    style="@style/TextView.ValidatePhone.UserName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="32dp"
+    android:text="@string/verify_welcome_back" />
+
+  <TextView
+    android:id="@+id/tv_validate_phone"
+    style="@style/TextView.ValidatePhone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:hint="@string/verify_username_hint"
+    android:text="@string/verify_welcome_back_description" />
+
+  <Button
+    android:id="@+id/bt_get_started"
+    style="@style/Button.ValidatePhone"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_margin="8dp"
+    android:text="@string/verify_username_button" />
+</LinearLayout>

@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'org.jetbrains.kotlin.android.extensions'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    flavorDimensions "app"
+
+    defaultConfig {
+        applicationId "co.photopon"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        dev {
+            dimension "app"
+        }
+        prod {
+            dimension "app"
+        }
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    //Android/google
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+
+    //Pager bullet
+    implementation 'com.robohorse.pagerbullet:pagerbullet:1.0.9'
+
+    //Dagger for dependency injection
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation "com.google.dagger:dagger:2.16"
+    kapt "com.google.dagger:dagger-compiler:2.16"
+
+    //Twilio SMS
+    implementation 'com.twilio:client-android:1.2.21'
+
+    //Phone number formatting
+    implementation 'ru.kolotnev:formatt-edit-text:0.7'
+
+    //rx android
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    //parse
+    implementation 'com.parse:parse-android:1.17.3'
+
+    //glide image loader
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    kapt 'com.github.bumptech.glide:compiler:4.7.1'
+
+    //threeten date
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.1.0'
+
+    //ink
+    implementation 'com.simplify:ink:1.0.1'
+
+    //chatkit
+    implementation 'com.github.stfalcon:chatkit:0.2.2'
+
+    //pubnub
+    implementation group: 'com.pubnub', name: 'pubnub-gson', version: '4.19.0'
+}
+
+//apply plugin: 'com.google.gms.google-services'

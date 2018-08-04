@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#456fee</color>
+
+  <!-- Basic colors -->
+  <color name="transparent_white">#ddffffff</color>
+  <color name="ultra_light_grey">#efefef</color>
+  <color name="light_grey">#cccccc</color>
+  <color name="disabled_grey">#aaaaaa</color>
+  <color name="grey">#666666</color>
+  <color name="charcoal">#333333</color>
+  <color name="transparent_black">#33000000</color>
+  <color name="transparent">#00000000</color>
+  <color name="red">#e5442d</color>
+  <color name="green">#359c4b</color>
+  <color name="blue">#296efb</color>
+  <color name="light_blue">#5383e4</color>
+  <color name="purple">#916eec</color>
+  <color name="pink_saturated">#d752c9</color>
+  <color name="pink">#e16ed3</color>
+  <color name="pink_transparent">#00e16ed3</color>
+
+  <!-- Onboarding -->
+  <color name="pager_bullet_active">#ffffff</color>
+  <color name="pager_bullet_inactive">#77ffffff</color>
+  <color name="onboarding_text">#ffffff</color>
+
+  <!-- Validate phone -->
+  <color name="validate_text">#475259</color>
+  <color name="validate_border">#c7c7cd</color>
+
+  <!-- For drawing -->
+  <color name="basic_blue">#00f</color>
+  <color name="basic_purple">#7f0f7e</color>
+  <color name="basic_red">#f00</color>
+  <color name="basic_orange">#f70</color>
+  <color name="basic_yellow">#ff0</color>
+  <color name="basic_black">#000</color>
+  <color name="basic_brown">#986638</color>
+  <color name="basic_green">#0f0</color>
+  <color name="basic_cyan">#0ff</color>
+  <color name="basic_white">#fff</color>
+
+</resources>

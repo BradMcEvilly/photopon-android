@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black"
+            android:columnCount="1"
+            android:orientation="horizontal"
+            android:rowCount="4">
+
+  <View
+    android:id="@+id/view_thickest"
+    style="@style/View.Stroke.Preview"
+    android:background="@drawable/stroke_thickest" />
+
+  <View
+    android:id="@+id/view_thick"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/stroke_thick" />
+
+  <View
+    android:id="@+id/view_thin"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/stroke_thin" />
+
+  <View
+    android:id="@+id/view_thinnest"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/stroke_thinnest" />
+
+</GridLayout>

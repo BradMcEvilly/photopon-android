@@ -1,0 +1,12 @@
+<resources>
+  <dimen name="fab_margin">16dp</dimen>
+  <dimen name="pager_bullet_indicator_active_dot_diameter">6dp</dimen>
+  <dimen name="pager_bullet_indicator_inactive_dot_diameter">6dp</dimen>
+  <dimen name="titlebar_margin">8dp</dimen>
+  <dimen name="titlebar_padding">2dp</dimen>
+  <dimen name="titlebar_icon_size">24dp</dimen>
+  <dimen name="titlebar_font_size">18sp</dimen>
+
+  <dimen name="big_icon_size">32dp</dimen>
+  <dimen name="small_icon_size">24dp</dimen>
+</resources>
