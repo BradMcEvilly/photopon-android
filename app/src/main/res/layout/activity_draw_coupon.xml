@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/layout_draw"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+
+  <RelativeLayout
+    android:id="@+id/ll_loading"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_centerInParent="true"
+    android:background="@color/transparent_black"
+    android:translationZ="10000dp">
+
+    <TextView
+      android:id="@+id/tv_loading"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:text="@string/verify_sending_code"
+      android:translationZ="11000dp" />
+
+    <ProgressBar
+      android:id="@+id/progress_bar"
+      style="?android:attr/progressBarStyleSmall"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_centerVertical="true"
+      android:layout_margin="8dp"
+      android:layout_toStartOf="@+id/tv_loading"
+      android:indeterminateDrawable="@drawable/progress"
+      android:translationZ="11000dp" />
+  </RelativeLayout>
+
+  <com.simplify.ink.InkView
+    android:id="@+id/ink_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true" />
+
+  <RelativeLayout
+    android:id="@+id/layout_coupon_preview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="32dp"
+    android:background="@drawable/bg_grey_rounded">
+
+    <ImageView
+      android:id="@+id/iv_coupon"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_margin="4dp"
+      android:src="@drawable/placeholder_coupon" />
+
+    <TextView
+      android:id="@+id/tv_coupon_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignTop="@+id/iv_coupon"
+      android:layout_marginBottom="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_toEndOf="@+id/iv_coupon"
+      android:fontFamily="@font/montserrat_regular"
+      android:text="coupon 2"
+      android:textColor="@color/charcoal"
+      android:textStyle="bold" />
+
+    <TextView
+      android:id="@+id/tv_coupon_description"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/tv_coupon_title"
+      android:layout_toEndOf="@+id/iv_coupon"
+      android:fontFamily="@font/montserrat_regular"
+      android:text="new coupon for the US"
+      android:textColor="@color/grey" />
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:id="@+id/layout_draw_controls"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@color/transparent_black">
+
+    <View
+      android:id="@+id/view_choose_color"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_alignParentStart="true"
+      android:layout_centerVertical="true"
+      android:layout_margin="8dp"
+      android:background="@drawable/square_blue_border" />
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:gravity="center">
+
+      <ImageButton
+        android:id="@+id/ib_done"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_check"
+        android:tint="@color/green" />
+
+      <ImageButton
+        android:id="@+id/ib_close"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_close" />
+    </LinearLayout>
+
+    <View
+      android:id="@+id/view_choose_stroke"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_alignParentEnd="true"
+      android:layout_centerVertical="true"
+      android:layout_margin="8dp"
+      android:background="@drawable/stroke_thinnest" />
+  </RelativeLayout>
+
+</RelativeLayout>

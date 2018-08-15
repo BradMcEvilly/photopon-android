@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:rowCount="5">
+
+  <View
+    android:id="@+id/view_blue"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_blue" />
+
+  <View
+    android:id="@+id/view_black"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_black" />
+
+  <View
+    android:id="@+id/view_purple"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_purple" />
+
+  <View
+    android:id="@+id/view_brown"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_brown" />
+
+  <View
+    android:id="@+id/view_red"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_red" />
+
+  <View
+    android:id="@+id/view_green"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_green" />
+
+  <View
+    android:id="@+id/view_orange"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_orange" />
+
+  <View
+    android:id="@+id/view_cyan"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_cyan" />
+
+  <View
+    android:id="@+id/view_yellow"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_yellow" />
+
+  <View
+    android:id="@+id/view_white"
+    style="@style/View.Color.Preview"
+    android:background="@drawable/square_white" />
+
+</GridLayout>

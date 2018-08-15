@@ -1,0 +1,456 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="PhotoponTheme" parent="Base.Theme.AppCompat.Light">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/pink</item>
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="PhotoponTheme.Splash">
+    <item name="android:windowFullscreen">true</item>
+  </style>
+
+  <style name="PhotoponTheme.Onboarding">
+    <item name="android:statusBarColor">@color/transparent</item>
+    <item name="android:navigationBarColor">@color/transparent</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+    <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+  </style>
+
+  <style name="PhotoponTheme.ValidatePhone" parent="Theme.AppCompat.NoActionBar">
+    <item name="android:statusBarColor">@android:color/white</item>
+    <item name="android:navigationBarColor">@android:color/white</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+    <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+  </style>
+
+  <style name="PhotoponTheme.MainActivity" parent="Theme.AppCompat.NoActionBar">
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <!--<item name="android:navigationBarColor">@android:color/white</item>-->
+    <!--<item name="android:windowTranslucentStatus">true</item>-->
+    <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    <!--<item name="android:windowDrawsSystemBarBackgrounds">false</item>-->
+  </style>
+
+  <style name="PhotoponTheme.SettingsActivity" parent="PhotoponTheme.MainActivity">
+
+  </style>
+
+  <style name="PhotoponTheme.AddFriendActivity" parent="PhotoponTheme.MainActivity">
+
+  </style>
+
+  <style name="PhotoponTheme.NoActionBar">
+  </style>
+
+  <style name="AppTheme.AppBarOverlay" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+  <style name="AppTheme.PopupOverlay" parent="Base.ThemeOverlay.AppCompat.Light" />
+
+  <!-- Dialogs -->
+  <style name="PhotoponDialog" parent="@android:style/Theme.Dialog">
+    <item name="android:windowTitleStyle">@null</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:textSize">22sp</item>
+    <item name="android:windowBackground">@android:color/white</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textColorPrimary">@color/charcoal</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:colorBackgroundCacheHint">@null</item>
+    <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    <item name="android:gravity">center</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:borderlessButtonStyle">@style/PhotoponDialogButton</item>
+    <item name="buttonBarPositiveButtonStyle">@style/PhotoponDialogButton</item>
+    <item name="android:fontFamily">@font/montserratalternates_regular</item>
+    <item name="android:layout_width">wrap_content</item>
+  </style>
+
+  <style name="PhotoponDialogButton">
+    <item name="android:textColor">@color/pink</item>
+    <item name="android:background">@color/transparent</item>
+    <item name="android:fontFamily">@font/montserratalternates_regular</item>
+    <item name="android:padding">8dp</item>
+  </style>
+
+  <!-- Stubs/common -->
+  <style name="Separator">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:background">@color/ultra_light_grey</item>
+    <item name="android:layout_marginTop">4dp</item>
+    <item name="android:layout_marginBottom">4dp</item>
+  </style>
+
+  <style name="View" />
+
+  <style name="TextView" />
+
+  <style name="RecyclerView">
+    <item name="android:background">@android:color/white</item>
+  </style>
+
+  <style name="ImageButton">
+    <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    <item name="android:scaleType">fitXY</item>
+  </style>
+
+  <style name="EditText" />
+
+  <style name="Layout" />
+
+  <style name="ImageView" />
+
+  <style name="Button">
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/montserratalternates_regular</item>
+  </style>
+
+  <style name="Button.Green">
+    <item name="android:background">@drawable/bt_green</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="Button.Blue">
+    <item name="android:background">@drawable/bt_blue</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="Button.Pink">
+    <item name="android:background">@drawable/bt_pink</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="Button.Transparent">
+    <item name="android:background">@color/transparent</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="Layout.Title">
+    <item name="android:layout_height">60dp</item>
+    <item name="android:layout_width">match_parent</item>
+  </style>
+
+  <style name="ImageButton.TitleBar">
+    <item name="android:layout_height">@dimen/titlebar_icon_size</item>
+    <item name="android:layout_width">@dimen/titlebar_icon_size</item>
+    <item name="android:layout_marginBottom">@dimen/titlebar_margin</item>
+    <item name="android:layout_marginStart">@dimen/titlebar_margin</item>
+    <item name="android:layout_marginEnd">@dimen/titlebar_margin</item>
+    <item name="android:layout_alignParentBottom">true</item>
+    <item name="android:tint">@android:color/white</item>
+  </style>
+
+  <style name="ImageButton.TitleBar.Close">
+    <item name="android:layout_alignParentStart">true</item>
+    <item name="android:src">@drawable/ic_close</item>
+  </style>
+
+  <style name="ImageButton.TitleBar.CheckCircle">
+    <item name="android:layout_alignParentEnd">true</item>
+    <item name="android:src">@drawable/ic_check_circle</item>
+  </style>
+
+  <style name="ImageButton.TitleBar.Hamburger">
+    <item name="android:layout_alignParentStart">true</item>
+    <item name="android:src">@drawable/ic_hamburger</item>
+  </style>
+
+  <style name="ImageButton.TitleBar.AddFriend">
+    <item name="android:layout_alignParentEnd">true</item>
+    <item name="android:src">@drawable/ic_add_friend</item>
+  </style>
+
+  <style name="ImageButton.TitleBar.Back">
+    <item name="android:layout_alignParentStart">true</item>
+    <item name="android:src">@drawable/ic_chevron_left</item>
+  </style>
+
+  <style name="Layout.Search">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:background">@color/light_grey</item>
+  </style>
+
+  <style name="EditText.Search">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:paddingTop">8dp</item>
+    <item name="android:paddingEnd">8dp</item>
+    <item name="android:paddingBottom">8dp</item>
+    <item name="android:paddingStart">32dp</item>
+    <item name="android:textColor">@color/charcoal</item>
+    <item name="android:textColorHint">@color/light_grey</item>
+    <item name="android:background">@drawable/bg_grey_rounded</item>
+    <item name="android:layout_margin">4dp</item>
+    <item name="android:hint">@string/add_friend_hint</item>
+    <item name="android:fontFamily">@font/montserrat_regular</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="ImageButton.ClearSearch">
+    <item name="android:layout_width">22dp</item>
+    <item name="android:layout_height">22dp</item>
+    <item name="android:layout_marginEnd">8dp</item>
+    <item name="android:layout_alignParentEnd">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:background">@color/transparent</item>
+    <item name="android:src">@drawable/ic_close</item>
+    <item name="android:tint">@color/grey</item>
+  </style>
+
+  <style name="ImageView.Search">
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:src">@drawable/ic_search</item>
+    <item name="android:tint">@color/grey</item>
+    <item name="android:layout_width">22dp</item>
+    <item name="android:layout_height">22dp</item>
+    <item name="android:layout_marginStart">12dp</item>
+  </style>
+
+  <!-- Splash -->
+  <style name="ImageView.SplashFooter">
+    <item name="android:adjustViewBounds">false</item>
+    <item name="android:background">@drawable/splash_bottom</item>
+    <item name="android:scaleType">fitXY</item>
+  </style>
+
+  <!-- Menu -->
+  <style name="Button.Menu" parent="Base.Widget.AppCompat.Button.Borderless">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:fontFamily">@font/montserrat_bold</item>
+    <item name="android:text">@string/menu_notifications</item>
+    <item name="android:textColor">@color/grey</item>
+    <item name="android:textSize">20sp</item>
+    <item name="android:background">@drawable/bt_pink_transparent</item>
+    <item name="android:gravity">center</item>
+    <item name="android:shadowColor">@android:color/transparent</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="Button.Menu.Small">
+    <item name="android:textColor">@color/light_grey</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:layout_marginTop">8dp</item>
+  </style>
+
+  <!-- Onboarding -->
+  <style name="Layout.Onboarding">
+    <item name="android:background">@drawable/background_onboarding</item>
+    <item name="android:fitsSystemWindows">true</item>
+  </style>
+
+  <style name="TextView.Onboarding">
+    <item name="android:textAlignment">center</item>
+    <item name="android:textColor">@color/onboarding_text</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="TextView.Onboarding.Title">
+    <item name="android:textSize">32sp</item>
+  </style>
+
+  <style name="TextView.Onboarding.Request">
+    <item name="android:padding">16dp</item>
+    <item name="android:textSize">22sp</item>
+  </style>
+
+  <!-- Validate Phone -->
+  <style name="Layout.SendingCode">
+    <item name="android:background">#dddddd</item>
+    <item name="android:textColor">@android:color/black</item>
+  </style>
+
+  <style name="Layout.ValidatePhone">
+    <item name="android:background">@android:color/white</item>
+    <item name="android:focusable">true</item>
+  </style>
+
+  <style name="TextView.SendingCode">
+    <item name="android:textColor">@android:color/black</item>
+  </style>
+
+  <style name="TextView.ValidatePhone">
+    <item name="android:textColor">@color/validate_text</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:textAlignment">center</item>
+  </style>
+
+  <style name="TextView.ValidatePhone.Title">
+    <item name="android:fontFamily">@font/montserrat_bold</item>
+    <item name="android:textColor">@color/validate_text</item>
+    <item name="android:textSize">32sp</item>
+  </style>
+
+  <style name="TextView.ValidatePhone.Title.Small">
+    <item name="android:textSize">22sp</item>
+  </style>
+
+  <style name="TextView.ValidatePhone.UserName">
+    <item name="android:textColor">@color/disabled_grey</item>
+  </style>
+
+  <style name="EditText.ValidatePhone">
+    <item name="android:textSize">22sp</item>
+    <item name="android:hint">@string/verify_hint</item>
+    <item name="android:textAlignment">center</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:background">@drawable/et_validate</item>
+  </style>
+
+  <style name="EditText.VerifyCode" parent="EditText.ValidatePhone">
+    <item name="android:hint">@string/verify_code_hint</item>
+  </style>
+
+  <style name="Button.ValidatePhone">
+    <item name="android:textSize">22sp</item>
+    <item name="android:fontFamily">@font/montserrat_bold</item>
+    <item name="android:background">@drawable/bt_pink</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="Button.ValidateLater">
+    <item name="android:textSize">16sp</item>
+    <item name="android:background">@color/transparent</item>
+    <item name="android:textColor">@color/pink</item>
+  </style>
+
+  <!-- Make Photopon Activity -->
+  <style name="ImageView.Logo" />
+
+  <style name="ImageView.Logo.White">
+    <item name="android:src">@drawable/logo_white</item>
+  </style>
+
+  <!-- Make Photopon fragments -->
+  <style name="TextView.EmptyList">
+    <item name="android:fontFamily">@font/montserrat_regular</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">@color/charcoal</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="Layout.Title.Notifications">
+    <item name="android:background">@color/red</item>
+  </style>
+
+  <style name="Layout.Title.MyFriends">
+    <item name="android:background">@color/light_blue</item>
+  </style>
+
+  <style name="Layout.Title.Gifts">
+    <item name="android:background">@color/pink_saturated</item>
+  </style>
+
+  <style name="Layout.Title.Wallet">
+    <item name="android:background">@color/purple</item>
+  </style>
+
+  <style name="TextView.FragmentTitle">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_alignParentBottom">true</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_marginBottom">@dimen/titlebar_margin</item>
+    <item name="android:fontFamily">@font/montserrat_medium</item>
+    <item name="android:padding">@dimen/titlebar_padding</item>
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:textSize">@dimen/titlebar_font_size</item>
+  </style>
+
+  <!--Settings -->
+  <style name="Layout.Title.Settings">
+    <item name="android:background">@color/pink</item>
+  </style>
+
+  <!-- Drawing -->
+  <style name="View.Color" />
+
+  <style name="View.Stroke" />
+
+  <style name="View.Color.Preview">
+    <item name="android:layout_width">40dp</item>
+    <item name="android:layout_height">40dp</item>
+    <item name="android:layout_margin">8dp</item>
+  </style>
+
+  <style name="View.Stroke.Preview">
+    <item name="android:layout_width">40dp</item>
+    <item name="android:layout_height">40dp</item>
+    <item name="android:layout_margin">8dp</item>
+  </style>
+
+  <!-- Share gift -->
+  <style name="Layout.Title.ShareGift">
+    <item name="android:background">@color/pink</item>
+  </style>
+
+  <!-- Friends -->
+  <style name="Layout.Title.AddFriend">
+    <item name="android:background">@color/light_blue</item>
+  </style>
+
+  <style name="ImageView.ListIcon">
+    <item name="android:layout_width">@dimen/big_icon_size</item>
+    <item name="android:layout_height">@dimen/big_icon_size</item>
+    <item name="android:layout_margin">8dp</item>
+  </style>
+
+  <style name="ImageView.ListIcon.Add">
+    <item name="android:background">@drawable/shape_empty_circle</item>
+    <item name="android:padding">4dp</item>
+    <item name="android:src">@drawable/ic_plus</item>
+    <item name="android:tint">@android:color/black</item>
+    <item name="android:layout_width">@dimen/small_icon_size</item>
+    <item name="android:layout_height">@dimen/small_icon_size</item>
+  </style>
+
+  <style name="ImageView.ListIcon.Checked">
+    <item name="android:background">@drawable/shape_filled_circle</item>
+    <item name="android:padding">4dp</item>
+    <item name="android:backgroundTint">@color/pink</item>
+    <item name="android:src">@drawable/ic_check</item>
+    <item name="android:tint">@android:color/white</item>
+    <item name="android:layout_width">@dimen/small_icon_size</item>
+    <item name="android:layout_height">@dimen/small_icon_size</item>
+  </style>
+
+  <style name="ImageView.ListIcon.Avatar">
+    <item name="android:padding">2dp</item>
+    <item name="android:background">@drawable/shape_filled_circle</item>
+    <item name="android:backgroundTint">@color/pink</item>
+    <item name="android:src">@drawable/ic_person</item>
+  </style>
+
+  <style name="TextView.ListText">
+    <item name="android:textSize">16sp</item>
+    <item name="android:fontFamily">@font/montserrat_regular</item>
+    <item name="android:paddingStart">8dp</item>
+    <item name="android:paddingEnd">8dp</item>
+  </style>
+
+  <style name="TextView.ListText.FullName">
+    <item name="android:textColor">@color/charcoal</item>
+  </style>
+
+  <style name="TextView.ListText.ContactInfo">
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">@color/grey</item>
+  </style>
+
+  <!-- My Friends -->
+  <style name="TextView.ListText.FriendInfo">
+
+  </style>
+
+
+</resources>

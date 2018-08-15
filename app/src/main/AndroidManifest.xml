@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="co.photopon">
+
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_CONTACTS" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+  <uses-feature android:name="android.hardware.camera2.full" />
+
+  <application
+    android:name=".application.PhotoponApplication"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/PhotoponTheme">
+
+    <activity
+      android:name=".splash.SplashActivity"
+      android:label="@string/app_name"
+      android:theme="@style/PhotoponTheme.Splash">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:name=".onboarding.OnboardingActivity"
+      android:theme="@style/PhotoponTheme.Onboarding" />
+
+    <activity
+      android:name=".onboarding.verify.VerifyNumberActivity"
+      android:theme="@style/PhotoponTheme.ValidatePhone" />
+
+    <activity
+      android:name=".main.MainActivity"
+      android:theme="@style/PhotoponTheme.MainActivity" />
+
+    <activity
+      android:name=".main.draw.DrawCouponActivity"
+      android:theme="@style/PhotoponTheme.SettingsActivity" />
+
+    <activity
+      android:name=".settings.SettingsActivity"
+      android:theme="@style/PhotoponTheme.SettingsActivity" />
+
+    <activity
+      android:name=".share.ShareGiftActivity"
+      android:theme="@style/PhotoponTheme.SettingsActivity" /><!--TODO theme correctly -->
+
+    <activity
+      android:name=".friends.AddFriendActivity"
+      android:windowSoftInputMode="adjustPan"
+      android:theme="@style/PhotoponTheme.SettingsActivity" />
+
+    <activity
+      android:name=".chat.ChatActivity"
+      android:windowSoftInputMode="adjustPan"
+      android:theme="@style/PhotoponTheme.SettingsActivity" />
+
+    <service
+      android:name="com.twilio.client.TwilioClientService"
+      android:exported="false"
+      android:stopWithTask="true" />
+  </application>
+</manifest>

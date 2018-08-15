@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:background="@drawable/bg_grey_rounded"
+  android:orientation="vertical"
+  android:padding="16dp">
+
+  <ImageView
+    android:id="@+id/iv_avatar"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/shape_filled_circle"
+    android:backgroundTint="@color/pink"
+    android:src="@drawable/ic_person" />
+
+  <TextView
+    android:id="@+id/tv_friend_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="32dp"
+    android:textAlignment="center"
+    android:textColor="@color/charcoal"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+      android:id="@+id/iv_chat"
+      android:layout_width="64dp"
+      android:layout_height="64dp"
+      android:layout_alignParentStart="true"
+      android:background="@drawable/bg_pink_circle"
+      android:padding="16dp"
+      android:src="@drawable/ic_chat"
+      android:tint="@color/pink" />
+
+    <ImageView
+      android:id="@+id/iv_gift"
+      android:layout_width="64dp"
+      android:layout_height="64dp"
+      android:layout_centerInParent="true"
+      android:background="@drawable/bg_pink_filled_circle"
+      android:padding="16dp"
+      android:src="@drawable/ic_gift"
+      android:tint="@color/white" />
+
+    <ImageView
+      android:id="@+id/iv_settings"
+      android:layout_width="64dp"
+      android:layout_height="64dp"
+      android:layout_alignParentEnd="true"
+      android:background="@drawable/bg_pink_circle"
+      android:padding="16dp"
+      android:src="@drawable/ic_gear"
+      android:tint="@color/pink" />
+
+  </RelativeLayout>
+
+</LinearLayout>

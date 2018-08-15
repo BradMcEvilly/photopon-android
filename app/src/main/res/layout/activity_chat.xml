@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@android:color/white"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:id="@+id/layout_settings"
+    style="@style/Layout.Title.AddFriend">
+
+    <ImageButton
+      android:id="@+id/ib_back"
+      style="@style/ImageButton.TitleBar.Back" />
+
+    <TextView
+      android:id="@+id/tv_title"
+      style="@style/TextView.FragmentTitle" />
+
+  </RelativeLayout>
+
+  <com.stfalcon.chatkit.messages.MessagesList
+    android:id="@+id/messages_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/message_input"
+    android:layout_below="@+id/layout_settings"
+    android:background="@color/white"
+    app:incomingDefaultBubbleColor="@color/grey"
+    app:incomingDefaultBubblePressedColor="@color/grey"
+    app:incomingDefaultBubbleSelectedColor="@color/grey"
+    app:incomingTextColor="@android:color/white"
+    app:incomingTimeTextColor="@android:color/white"
+    app:outcomingDefaultBubbleColor="@color/blue"
+    app:outcomingDefaultBubblePressedColor="@color/blue"
+    app:outcomingDefaultBubbleSelectedColor="@color/blue"
+    app:outcomingTextColor="@android:color/white"
+    app:outcomingTimeTextColor="@android:color/white" />
+
+
+  <com.stfalcon.chatkit.messages.MessageInput
+    android:id="@+id/message_input"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_alignParentBottom="true"
+    app:inputHint="@string/hint_enter_message"
+    app:showAttachmentButton="false" />
+
+</RelativeLayout>

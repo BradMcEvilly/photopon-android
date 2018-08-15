@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@android:color/white"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:id="@+id/layout_settings"
+    style="@style/Layout.Title.AddFriend">
+
+    <ImageButton
+      android:id="@+id/ib_back"
+      style="@style/ImageButton.TitleBar.Back" />
+
+    <TextView
+      style="@style/TextView.FragmentTitle"
+      android:text="@string/add_friend_title" />
+
+  </RelativeLayout>
+
+  <RelativeLayout style="@style/Layout.Search">
+
+    <EditText
+      android:id="@+id/et_add_friend"
+      style="@style/EditText.Search" />
+
+    <ImageButton
+      android:id="@+id/ib_clear_search"
+      style="@style/ImageButton.ClearSearch" />
+
+    <ImageView style="@style/ImageView.Search" />
+
+  </RelativeLayout>
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_friends"
+    style="@style/RecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</LinearLayout>
