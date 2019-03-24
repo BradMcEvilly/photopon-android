@@ -14,5 +14,8 @@ data class NotificationViewModel(val type: NotificationViewModelType,
 enum class NotificationViewModelType(s: String) {
   FRIEND("FRIEND"),
   PHOTOPON("PHOTOPON"),
+  UNLOCKEDCOUPON("UNLOCKEDCOUPON"),
+  REDEEMED("REDEEMED"),
+  ADDWALLET("ADDWALLET"),
   MESSAGE("MESSAGE")
 }

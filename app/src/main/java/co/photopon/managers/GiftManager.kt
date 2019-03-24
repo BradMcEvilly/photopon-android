@@ -2,8 +2,12 @@ package co.photopon.managers
 
 import com.parse.*
 import java.io.File
+import android.util.Log
 
 class GiftManager {
+
+  private val notificationManager:NotificationManager = NotificationManager()
+  private val TAG: String = "GiftManager"
 
   fun saveImage(image: File, completion: (success: Boolean, file: ParseFile) -> Unit) {
     val file = ParseFile(image)
@@ -12,7 +16,11 @@ class GiftManager {
 
   fun sendPhotopons(coupon: ParseObject, drawing: ParseFile, photo: ParseFile,
                     friends: List<ParseUser>, completion: (success: Boolean) -> Unit) {
+
+    Log.i(TAG, "sendPhotopons")
+
     val photopon = ParseObject("Photopon")
+
     photopon.put("drawing", drawing)
     photopon.put("photo", photo)
     photopon.put("coupon", coupon)
@@ -21,7 +29,37 @@ class GiftManager {
     photopon.put("installationId", "b406885f-0b8f-4e66-ab80-19681074362d")
 
     photopon.saveInBackground { e ->
+
+      Log.i(TAG, "-----------------------------------")
+      Log.i(TAG, "photopon.saveInBackground { e ->  BEGIN")
+      Log.i(TAG, "-----------------------------------")
+
+      if(e == null){
+
+        Log.i(TAG, "-----------------------------------")
+        Log.i(TAG, "photopon.saveInBackground SUCCESS")
+        Log.i(TAG, "-----------------------------------")
+
+        friends.forEach({ u ->
+          Log.i(TAG, "-----------------------------------")
+          Log.i(TAG, "for (u in users) { u =(BEFORE TYPE CAST) $u")
+          Log.i(TAG, "-----------------------------------")
+
+//          Log.i(TAG, "-----------------------------------")
+//          Log.i(TAG, "for (u in users) { u =(AFTER TYPE CAST) $u")
+//          Log.i(TAG, "-----------------------------------")
+
+          notificationManager.createPhotoponNotification(u, photopon)
+
+        })
+
+      }
       completion(e == null)
+
+      Log.i(TAG, "-----------------------------------")
+      Log.i(TAG, "photopon.saveInBackground { e ->  END!!!!")
+      Log.i(TAG, "-----------------------------------")
+
     }
   }
 
@@ -31,9 +69,16 @@ class GiftManager {
 
     query.findInBackground { objects, e ->
       if (e == null) {
+
+
+
         coupons(objects)
       } else {
-//        error
+        println("------------------------")
+        println("query.findInBackground { objects, e ->")
+        println("ERROR: ")
+        println(e.toString())
+        println("------------------------")
       }
     }
     return query

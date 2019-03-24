@@ -57,7 +57,7 @@
     android:layout_height="wrap_content"
     android:fontFamily="@font/montserrat_medium"
     android:padding="8dp"
-    android:text="1703701869"
+    android:text="19736007440"
     android:textColor="@color/light_grey" />
 
   <View style="@style/Separator" />

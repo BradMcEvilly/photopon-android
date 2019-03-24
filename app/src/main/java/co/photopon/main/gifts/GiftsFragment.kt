@@ -10,7 +10,6 @@ import co.photopon.R
 import co.photopon.application.PhotoponActivity
 import co.photopon.application.PhotoponFragment
 import co.photopon.extensions.mainApplication
-import co.photopon.main.friends.GiftsAdapter
 import co.photopon.main.friends.GiftsModule
 import co.photopon.main.friends.GiftsPresenter
 import co.photopon.main.friends.GiftsView

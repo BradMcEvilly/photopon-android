@@ -68,6 +68,9 @@
   <string name="notifications_empty">You don\'t have any notifications\n&#128718;</string>
   <string name="notifications_title">Notifications</string>
   <string name="notifications_added_you" formatted="true">%s added you</string>
+  <string name="notifications_saved_photopon" formatted="true">%s saved your photopon</string>
+  <string name="notifications_redeemed_photopon" formatted="true">%s redeemed your photopon</string>
+  <string name="notifications_unlocked_coupon" formatted="true">%s You unlocked a coupon! Check your wallet!</string>
   <string name="notifications_add_back">You can add them back</string>
   <string name="notifications_messaged_you" formatted="true">%s messaged you</string>
 

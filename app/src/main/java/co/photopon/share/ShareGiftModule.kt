@@ -3,6 +3,7 @@ package co.photopon.friends
 import android.content.Context
 import co.photopon.managers.FriendManager
 import co.photopon.managers.GiftManager
+import co.photopon.managers.NotificationManager
 import dagger.Module
 import dagger.Provides
 
@@ -20,7 +21,8 @@ class ShareGiftModule(val view: ShareGiftView) {
   fun providePresenter(view: ShareGiftView,
                        context: Context,
                        friendManager: FriendManager,
+                       notificationManager: NotificationManager,
                        giftManager: GiftManager): ShareGiftPresenter =
-      ShareGiftPresenterImpl(view, context, friendManager, giftManager)
+      ShareGiftPresenterImpl(view, context, friendManager, notificationManager, giftManager)
 
 }

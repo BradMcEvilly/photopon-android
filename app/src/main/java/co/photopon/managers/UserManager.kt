@@ -23,7 +23,7 @@ class UserManager {
     val query = ParseUser.getQuery()
     query.whereEqualTo("phone", number)
     ParseCloud.callFunctionInBackground("getUserSessionToken",
-        hashMapOf("phoneNumber" to "17017301869"),
+        hashMapOf("phoneNumber" to number),
         FunctionCallback<String> { token, _ ->
           ParseUser.becomeInBackground(token, callback)
         })

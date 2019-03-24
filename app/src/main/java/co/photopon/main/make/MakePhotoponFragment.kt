@@ -49,6 +49,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
   private var callback: MakePhotoponListener? = null
 
   override fun onAttach(context: Context?) {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "onAttach")
+    Log.i(TAG, "---------====---------")
+
     super.onAttach(context)
 
     callback = context as? MakePhotoponListener
@@ -56,6 +61,10 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                             savedInstanceState: Bundle?): View? {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "onCreateView")
+    Log.i(TAG, "---------====---------")
 
     mainApplication.appComponent().plus(MakePhotoponModule(this)).inject(this)
 
@@ -70,6 +79,12 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
   }
 
   override fun displayCoupons(coupons: ArrayList<GiftViewModel>) {
+
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "displayCoupons")
+    Log.i(TAG, "---------====---------")
+
     view_pager.visibility = if (coupons.isEmpty()) View.GONE else View.VISIBLE
 
     viewModels = coupons
@@ -82,13 +97,34 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
                                   positionOffsetPixels: Int) = Unit
 
       override fun onPageSelected(position: Int) {
+
+        Log.i(TAG, "---------====---------")
+        Log.i(TAG, "override fun onPageSelected(position: Int) { position = $position")
+        Log.i(TAG, "---------====---------")
+
         selectedPage = position
       }
     })
 
     arguments?.get(ARGUMENT_PRESELECTED_COUPON)?.let {coupon ->
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "displayCoupons  arguments?.get(ARGUMENT_PRESELECTED_COUPON)?.let {coupon ->")
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "coupon = $coupon")
+
       coupon as GiftViewModel
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "coupon as GiftViewModel")
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "coupon = $coupon")
+      Log.i(TAG, "---------====---------")
+
       view_pager.currentItem = coupons.map { it.parseObject.objectId }.indexOf(coupon.parseObject.objectId)
+
     }
   }
 
@@ -99,10 +135,20 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
   private val surfaceTextureListener = object : TextureView.SurfaceTextureListener {
 
     override fun onSurfaceTextureAvailable(texture: SurfaceTexture, width: Int, height: Int) {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "surfaceTextureListener  onSurfaceTextureAvailable")
+      Log.i(TAG, "---------====---------")
+
       openCamera(width, height)
     }
 
     override fun onSurfaceTextureSizeChanged(texture: SurfaceTexture, width: Int, height: Int) {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "surfaceTextureListener  onSurfaceTextureSizeChanged")
+      Log.i(TAG, "---------====---------")
+
       configureTransform(width, height)
     }
 
@@ -143,18 +189,34 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
   private val stateCallback = object : CameraDevice.StateCallback() {
 
     override fun onOpened(cameraDevice: CameraDevice) {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "stateCallback onOpened")
+      Log.i(TAG, "---------====---------")
+
       cameraOpenCloseLock.release()
       this@MakePhotoponFragment.cameraDevice = cameraDevice
       createCameraPreviewSession()
     }
 
     override fun onDisconnected(cameraDevice: CameraDevice) {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "stateCallback onDisconnected")
+      Log.i(TAG, "---------====---------")
+
       cameraOpenCloseLock.release()
       cameraDevice.close()
       this@MakePhotoponFragment.cameraDevice = null
     }
 
     override fun onError(cameraDevice: CameraDevice, error: Int) {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "stateCallback onError  error = $error")
+      Log.i(TAG, "stateCallback onError  cameraDevice = $cameraDevice")
+      Log.i(TAG, "---------====---------")
+
       onDisconnected(cameraDevice)
       callback?.onCameraError()
     }
@@ -186,6 +248,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * still image is ready to be saved.
    */
   private val onImageAvailableListener = ImageReader.OnImageAvailableListener {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "onImageAvailableListener")
+    Log.i(TAG, "---------====---------")
+
     backgroundHandler?.post(ImageSaver(it.acquireNextImage(), file))
   }
 
@@ -227,6 +294,7 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
   private val captureCallback = object : CameraCaptureSession.CaptureCallback() {
 
     private fun process(result: CaptureResult) {
+
       when (state) {
         STATE_PREVIEW -> Unit // Do nothing when the camera preview is working normally.
         STATE_WAITING_LOCK -> capturePicture(result)
@@ -251,6 +319,7 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
     }
 
     private fun capturePicture(result: CaptureResult) {
+
       captureStillPicture()
 //      val afState = result.get(CaptureResult.CONTROL_AF_STATE)
 //      if (afState == null) {
@@ -271,24 +340,36 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
     override fun onCaptureProgressed(session: CameraCaptureSession,
                                      request: CaptureRequest,
                                      partialResult: CaptureResult) {
+
       process(partialResult)
     }
 
     override fun onCaptureCompleted(session: CameraCaptureSession,
                                     request: CaptureRequest,
                                     result: TotalCaptureResult) {
+
       process(result)
     }
 
   }
 
   override fun onActivityCreated(savedInstanceState: Bundle?) {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "onActivityCreated")
+    Log.i(TAG, "---------====---------")
+
     super.onActivityCreated(savedInstanceState)
     file = File(activity?.getExternalFilesDir(null),
         PIC_FILE_NAME)
   }
 
   override fun onResume() {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "onResume")
+    Log.i(TAG, "---------====---------")
+
     super.onResume()
     startBackgroundThread()
 
@@ -304,6 +385,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
   }
 
   override fun onPause() {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "onPause")
+    Log.i(TAG, "---------====---------")
+
     closeCamera()
     stopBackgroundThread()
     super.onPause()
@@ -316,9 +402,20 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * @param height The height of available size for camera preview
    */
   private fun setUpCameraOutputs(width: Int, height: Int) {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "setUpCameraOutputs")
+    Log.i(TAG, "---------====---------")
+
     val manager = activity?.getSystemService(Context.CAMERA_SERVICE) as CameraManager
     try {
       for (cameraId in manager.cameraIdList) {
+
+        Log.i(TAG, "---------====---------")
+        Log.i(TAG, "for (cameraId in manager.cameraIdList) {")
+        Log.i(TAG, "cameraId = $cameraId")
+        Log.i(TAG, "---------====---------")
+
         val characteristics = manager.getCameraCharacteristics(cameraId)
 
         // We don't use a front facing camera in this sample.
@@ -386,6 +483,7 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
     } catch (e: CameraAccessException) {
       Log.e(TAG, e.toString())
     } catch (e: NullPointerException) {
+      Log.e(TAG, e.toString())
       // Currently an NPE is thrown when the Camera2API is used but not supported on the
       // device this code runs.
       callback?.onCameraError()
@@ -401,6 +499,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * @return true if the dimensions are swapped, false otherwise.
    */
   private fun areDimensionsSwapped(displayRotation: Int): Boolean {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "areDimensionsSwapped")
+    Log.i(TAG, "---------====---------")
+
     var swappedDimensions = false
     when (displayRotation) {
       Surface.ROTATION_0, Surface.ROTATION_180 -> {
@@ -426,6 +529,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    */
   @SuppressLint("MissingPermission")
   private fun openCamera(width: Int, height: Int) {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "openCamera")
+    Log.i(TAG, "---------====---------")
+
     setUpCameraOutputs(width, height)
     configureTransform(width, height)
     val manager = activity?.getSystemService(Context.CAMERA_SERVICE) as CameraManager
@@ -446,7 +554,17 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * Closes the current [CameraDevice].
    */
   private fun closeCamera() {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "closeCamera")
+    Log.i(TAG, "---------====---------")
+
     try {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "closeCamera   try {")
+      Log.i(TAG, "---------====---------")
+
       cameraOpenCloseLock.acquire()
       captureSession?.close()
       captureSession = null
@@ -455,8 +573,19 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
       imageReader?.close()
       imageReader = null
     } catch (e: InterruptedException) {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "closeCamera   catch {   e:")
+      Log.e(TAG, e.toString())
+      Log.i(TAG, "---------====---------")
+
       throw RuntimeException("Interrupted while trying to lock camera closing.", e)
     } finally {
+
+      Log.i(TAG, "---------====---------")
+      Log.i(TAG, "closeCamera   finally {")
+      Log.i(TAG, "---------====---------")
+
       cameraOpenCloseLock.release()
     }
   }
@@ -465,6 +594,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * Starts a background thread and its [Handler].
    */
   private fun startBackgroundThread() {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "setUpCameraOutputs")
+    Log.i(TAG, "---------====---------")
+
     backgroundThread = HandlerThread("CameraBackground").also { it.start() }
     backgroundHandler = Handler(backgroundThread?.looper)
   }
@@ -473,6 +607,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * Stops the background thread and its [Handler].
    */
   private fun stopBackgroundThread() {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "stopBackgroundThread")
+    Log.i(TAG, "---------====---------")
+
     backgroundThread?.quitSafely()
     try {
       backgroundThread?.join()
@@ -487,7 +626,17 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * Creates a new [CameraCaptureSession] for camera preview.
    */
   private fun createCameraPreviewSession() {
+
+    Log.i(TAG, "---------====---------")
+    Log.i(TAG, "createCameraPreviewSession")
+    Log.i(TAG, "---------====---------")
+
     try {
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "createCameraPreviewSession  try {")
+      Log.i(TAG, "----------------")
+
       val texture = textureView.surfaceTexture
 
       // We configure the size of default buffer to be the size of camera preview we want.
@@ -502,17 +651,53 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
       )
       previewRequestBuilder.addTarget(surface)
 
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "createCameraPreviewSession  try {   previewRequestBuilder.addTarget(surface)")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
+
       // Here, we create a CameraCaptureSession for camera preview.
       cameraDevice?.createCaptureSession(Arrays.asList(surface, imageReader?.surface),
           object : CameraCaptureSession.StateCallback() {
 
             override fun onConfigured(cameraCaptureSession: CameraCaptureSession) {
+
+              Log.i(TAG, "----------------")
+              Log.i(TAG, "----------------")
+              Log.i(TAG, "object : CameraCaptureSession.StateCallback() {")
+              Log.i(TAG, "override fun onConfigured(cameraCaptureSession: CameraCaptureSession) {")
+              Log.i(TAG, "----------------")
+              Log.i(TAG, "----------------")
+
               // The camera is already closed
-              if (cameraDevice == null) return
+              if (cameraDevice == null){
+
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "if(cameraDevice == null")
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "----------------")
+                return
+              }
 
               // When the session is ready, we start displaying the preview.
               captureSession = cameraCaptureSession
+
+              Log.i(TAG, "----------------")
+              Log.i(TAG, "captureSession = cameraCaptureSession")
+              Log.i(TAG, "----------------")
+
               try {
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "override fun onConfigured(cameraCaptureSession: CameraCaptureSession) {")
+                Log.i(TAG, "...")
+                Log.i(TAG, "try { ")
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "----------------")
+
                 // Auto focus should be continuous for camera preview.
                 previewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,
                     CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE)
@@ -523,17 +708,46 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
                 previewRequest = previewRequestBuilder.build()
                 captureSession?.setRepeatingRequest(previewRequest,
                     captureCallback, backgroundHandler)
+
+
+
               } catch (e: CameraAccessException) {
+
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "} catch (e: CameraAccessException")
+                Log.i(TAG, "cameraDevice?.createCaptureSession(Arrays.asList(surface, imageReader?.surface),\n" +
+                        "          object : CameraCaptureSession.StateCallback() {" +
+                        "...    } catch (e: CameraAccessException) {")
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "----------------")
                 Log.e(TAG, e.toString())
+                Log.i(TAG, "----------------")
+                Log.i(TAG, "----------------")
               }
             }
 
             override fun onConfigureFailed(session: CameraCaptureSession) {
+
+              Log.i(TAG, "----------------")
+              Log.i(TAG, "override fun onConfigureFailed(session: CameraCaptureSession) {")
+              Log.i(TAG, "----------------")
+
               callback?.onCameraError()
             }
           }, null)
     } catch (e: CameraAccessException) {
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "} catch (e: CameraAccessException")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "ERROR INFO: ")
+
       Log.e(TAG, e.toString())
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
     }
   }
 
@@ -546,7 +760,18 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * @param viewHeight The height of `textureView`
    */
   private fun configureTransform(viewWidth: Int, viewHeight: Int) {
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "private fun configureTransform(viewWidth: Int, viewHeight: Int) {")
+    Log.i(TAG, "----------------")
+
     activity ?: return
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "activity ?: return")
+    Log.i(TAG, "activity = $activity")
+    Log.i(TAG, "----------------")
+
     val rotation = activity?.windowManager?.defaultDisplay?.rotation
     val matrix = Matrix()
     val viewRect = RectF(0f, 0f, viewWidth.toFloat(), viewHeight.toFloat())
@@ -555,6 +780,11 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
     val centerY = viewRect.centerY()
 
     if (Surface.ROTATION_90 == rotation || Surface.ROTATION_270 == rotation) {
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "if (Surface.ROTATION_90 == rotation || Surface.ROTATION_270 == rotation) {")
+      Log.i(TAG, "----------------")
+
       bufferRect.offset(centerX - bufferRect.centerX(), centerY - bufferRect.centerY())
       val scale = Math.max(
           viewHeight.toFloat() / previewSize.height,
@@ -565,16 +795,44 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
         postRotate((90 * (rotation - 2)).toFloat(), centerX, centerY)
       }
     } else if (Surface.ROTATION_180 == rotation) {
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "} else if (Surface.ROTATION_180 == rotation) {")
+      Log.i(TAG, "----------------")
+
       matrix.postRotate(180f, centerX, centerY)
     }
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "END   if () else if ()...")
+    Log.i(TAG, "----------------")
+
     textureView.setTransform(matrix)
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "textureView.setTransform(matrix)")
+    Log.i(TAG, "----------------")
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "configureTransform    END")
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "----------------")
+
   }
 
   /**
    * Lock the focus as the first step for a still image capture.
    */
   private fun lockFocus() {
+
+    Log.i(TAG, "--------------")
+    Log.i(TAG, "private fun lockFocus()")
+    Log.i(TAG, "--------------")
+
     try {
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "try {")
+      Log.i(TAG, "--------------")
       // This is how to tell the camera to lock focus.
       previewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
           CameraMetadata.CONTROL_AF_TRIGGER_START)
@@ -583,7 +841,14 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
       captureSession?.capture(previewRequestBuilder.build(), captureCallback,
           backgroundHandler)
     } catch (e: CameraAccessException) {
+
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "CameraAccessException")
+      Log.i(TAG, "----------------")
       Log.e(TAG, e.toString())
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
     }
 
   }
@@ -593,7 +858,17 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * we get a response in [.captureCallback] from [.lockFocus].
    */
   private fun runPrecaptureSequence() {
+
+    Log.i(TAG, "--------------")
+    Log.i(TAG, "runPrecaptureSequence")
+    Log.i(TAG, "--------------")
+
     try {
+
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "runPrecaptureSequence :: try { ")
+      Log.i(TAG, "--------------")
+
       // This is how to tell the camera to trigger.
       previewRequestBuilder.set(CaptureRequest.CONTROL_AE_PRECAPTURE_TRIGGER,
           CaptureRequest.CONTROL_AE_PRECAPTURE_TRIGGER_START)
@@ -602,9 +877,20 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
       captureSession?.capture(previewRequestBuilder.build(), captureCallback,
           backgroundHandler)
     } catch (e: CameraAccessException) {
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "runPrecaptureSequence :: try {} catch (e: CameraAccessException")
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "ERROR   e.toString():")
       Log.e(TAG, e.toString())
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "--------------")
     }
 
+    Log.i(TAG, "--------------")
+    Log.i(TAG, "END   try{...} catch (e: CameraAccessException) {...}")
+    Log.i(TAG, "--------------")
+    Log.i(TAG, "--------------")
   }
 
   /**
@@ -612,9 +898,24 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * [.captureCallback] from both [.lockFocus].
    */
   private fun captureStillPicture() {
+
+    Log.i(TAG, "--------------")
+    Log.i(TAG, "captureStillPicture")
+    Log.i(TAG, "--------------")
+
     try {
+
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "    try {")
+      Log.i(TAG, "--------------")
+
       if (activity == null || cameraDevice == null) return
       val rotation = activity?.windowManager?.defaultDisplay?.rotation
+
+
+      Log.i(TAG, "--------------")
+      Log.i(TAG, "rotation = activity?.windowManager?...")
+      Log.i(TAG, "--------------")
 
       // This is the CaptureRequest.Builder that we use to take a picture.
       val captureBuilder = cameraDevice?.createCaptureRequest(
@@ -633,14 +934,22 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
             CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE)
       }?.also { setAutoFlash(it) }
 
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "captureBuilderRequest{ ... }?.also { setAutoFlash(it) }")
+      Log.i(TAG, "----------------")
+
       val captureCallback = object : CameraCaptureSession.CaptureCallback() {
 
         override fun onCaptureCompleted(session: CameraCaptureSession,
                                         request: CaptureRequest,
                                         result: TotalCaptureResult) {
+
           callback?.onPictureTaken(file, viewModels?.get(selectedPage))
+
           Log.d(TAG, file.toString())
+
           unlockFocus()
+
         }
       }
 
@@ -650,7 +959,9 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
         capture(captureBuilder?.build(), captureCallback, null)
       }
     } catch (e: CameraAccessException) {
+
       Log.e(TAG, e.toString())
+
     }
 
   }
@@ -660,7 +971,18 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
    * finished.
    */
   private fun unlockFocus() {
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "unlockFocus")
+    Log.i(TAG, "----------------")
+
     try {
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "unlockFocus   try {")
+
       // Reset the auto-focus trigger
       previewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
           CameraMetadata.CONTROL_AF_TRIGGER_CANCEL)
@@ -672,20 +994,58 @@ class MakePhotoponFragment : Fragment(), MakePhotoponView {
       captureSession?.setRepeatingRequest(previewRequest, captureCallback,
           backgroundHandler)
     } catch (e: CameraAccessException) {
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "unlockFocus   try { catch (e: CameraAccessException")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
       Log.e(TAG, e.toString())
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "----------------")
     }
 
   }
 
   private fun onShutterButtonClicked() {
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "onShutterButtonClicked")
+    Log.i(TAG, "----------------")
+
     lockFocus()
   }
 
   private fun setAutoFlash(requestBuilder: CaptureRequest.Builder) {
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "----------------")
+
     if (flashSupported) {
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "setAutoFlash :: if(flashSupported")
+      Log.i(TAG, "----------------")
+
       requestBuilder.set(CaptureRequest.CONTROL_AE_MODE,
           CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH)
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "requestBuilder.set(CaptureRequest.CONTROL_AE_MODE,\n" +
+              "          CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH)")
+      Log.i(TAG, "----------------")
+
+      Log.i(TAG, "----------------")
+      Log.i(TAG, "setAutoFlash :: END IF [if(flashSupported]")
+      Log.i(TAG, "----------------")
+
     }
+
+    Log.i(TAG, "----------------")
+    Log.i(TAG, "END setAutoFlash")
+    Log.i(TAG, "----------------")
   }
 
   companion object {

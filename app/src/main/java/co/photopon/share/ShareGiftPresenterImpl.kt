@@ -3,6 +3,7 @@ package co.photopon.friends
 import android.content.Context
 import co.photopon.managers.FriendManager
 import co.photopon.managers.GiftManager
+import co.photopon.managers.NotificationManager
 import com.parse.ParseFile
 import com.parse.ParseObject
 import com.parse.ParseQuery
@@ -12,6 +13,7 @@ import com.parse.ParseUser
 class ShareGiftPresenterImpl(override val view: ShareGiftView,
                              override val context: Context,
                              override val friendManager: FriendManager,
+                             override val notificationManager: NotificationManager,
                              override val giftManager: GiftManager) : ShareGiftPresenter {
 
   private var friendsQuery: ParseQuery<ParseObject>? = null

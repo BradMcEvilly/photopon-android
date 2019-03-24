@@ -3,6 +3,7 @@ package co.photopon.friends
 import android.content.Context
 import co.photopon.managers.FriendManager
 import co.photopon.managers.GiftManager
+import co.photopon.managers.NotificationManager
 import com.parse.ParseFile
 import com.parse.ParseObject
 
@@ -24,6 +25,8 @@ interface ShareGiftPresenter {
   val giftManager: GiftManager
 
   val friendManager: FriendManager
+
+  val notificationManager: NotificationManager
 
   fun onRefresh()
 

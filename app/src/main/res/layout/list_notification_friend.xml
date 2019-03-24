@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:padding="8dp">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
   <ImageView
-    android:id="@+id/iv_person"
-    style="@style/ImageView.ListIcon.Avatar"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="parent" />
+      android:id="@+id/iv_person"
+      style="@style/ImageView.ListIcon.Avatar"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="parent" />
 
   <TextView
-    android:id="@+id/tv_title"
-    style="@style/TextView.ListText.FullName"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="test added you"
-    app:layout_constraintBottom_toTopOf="@id/tv_friend_info"
-    app:layout_constraintEnd_toStartOf="@id/iv_add_friend"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toEndOf="@id/iv_person"
-    app:layout_constraintTop_toBottomOf="@id/tv_friend_header" />
+      android:id="@+id/tv_title"
+      style="@style/TextView.ListText.FullName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="test added you"
+      app:layout_constraintBottom_toTopOf="@id/tv_description"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@id/iv_person"
+      app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
-    android:id="@+id/tv_description"
-    style="@style/TextView.ListText.ContactInfo"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="You can add them back"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@id/iv_add_friend"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toEndOf="@id/iv_person"
-    app:layout_constraintTop_toBottomOf="@id/tv_full_name" />
+      android:id="@+id/tv_description"
+      style="@style/TextView.ListText.ContactInfo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="You can add them back"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@id/iv_person"
+      app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
 </android.support.constraint.ConstraintLayout>
