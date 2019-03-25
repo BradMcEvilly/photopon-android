@@ -82,7 +82,7 @@
   <string name="my_friends_shared_used" formatted="true">%d gifts shared • %d used</string>
 
   <!-- Gifts -->
-  <string name="gifts_title">Gifts</string>
+  <string name="gifts_title">Coupons</string>
   <string name="gifts_empty">You don\'t have any coupons</string>
   <string name="gifts_expiration">Expires %s</string>
   <string name="gifts_button_get">Get &#128184;</string>
