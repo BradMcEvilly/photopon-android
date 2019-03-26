@@ -62,7 +62,6 @@ class GiftsAdapter(val context: Context,
 
     //Load coupon pic from company parse object
 
-    // if cache is empty for this object, let's make the API call for data
     if (item.couponImage != null) {
 
       item.couponImage.let { file ->
