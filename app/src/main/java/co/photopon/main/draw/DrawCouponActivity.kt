@@ -6,11 +6,13 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupWindow
 import co.photopon.R
+import co.photopon.application.GlideApp
 import co.photopon.application.PhotoponActivity
 import co.photopon.extensions.fromDpsToPixels
 import co.photopon.extensions.mainApplication
@@ -29,6 +31,8 @@ class DrawCouponActivity : PhotoponActivity(), DrawCouponView {
   private var colorPopup: PopupWindow? = null
 
   private var backgroundFile: File? = null
+
+  private val TAG: String = "DrawCouponActivity"
 
   @Inject
   lateinit var presenter: DrawCouponPresenter
@@ -74,6 +78,60 @@ class DrawCouponActivity : PhotoponActivity(), DrawCouponView {
     intent.getParcelableExtra<GiftViewModel>(EXTRA_VIEW_MODEL)?.let { viewModel ->
       tv_coupon_title.text = viewModel.title
       tv_coupon_description.text = viewModel.description
+
+      if (viewModel.couponImage != null) {
+
+        Log.i(TAG, "-----------------------")
+        Log.i(TAG, "if (viewModel.couponImage != null) {")
+        Log.i(TAG, "-----------------------")
+
+        viewModel.couponImage.let { file ->
+
+          Log.i(TAG, "--------------------")
+          Log.i(TAG, "couponImage.let { file -> file = $file")
+          Log.i(TAG, "--------------------")
+
+          file.getDataInBackground { fileData, e ->
+
+            Log.i(TAG, "--------------------")
+            Log.i(TAG, "--------------------")
+            Log.i(TAG, "couponImage.let { file -> file = $file")
+            Log.i(TAG, "--------------------")
+            Log.i(TAG, "--------------------")
+
+            Log.i(TAG, "--------------------")
+            Log.i(TAG, "file.getDataInBackground { fileData, e -> e = $e")
+            Log.i(TAG, "--------------------")
+            //Log.i(TAG, "file.getDataInBackground { data, e -> data = $data")
+            Log.i(TAG, "--------------------")
+
+            if (e == null && fileData != null && fileData.isNotEmpty()) {
+
+              Log.i(TAG, "------>  if (e == null && data != null && data.isNotEmpty()) {")
+              // here we g0\
+              iv_coupon.setPadding(0, 0, 0, 0)
+
+              Log.i(TAG, "-----------------------")
+              Log.i(TAG, "iv_coupon.setpadding...")
+              Log.i(TAG, "-----------------------")
+
+              GlideApp.with(this)
+                      .asBitmap()
+                      .load(fileData)
+                      .fitCenter()
+                      .circleCrop()
+                      .into(iv_coupon)
+
+              Log.i(TAG, "-----------------------")
+              Log.i(TAG, "GlideApp.with(this)...)")
+              Log.i(TAG, "-----------------------")
+
+            }
+
+          }
+        }
+      }
+
     }
   }
 

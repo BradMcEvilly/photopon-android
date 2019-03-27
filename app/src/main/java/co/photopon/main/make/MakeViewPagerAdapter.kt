@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import co.photopon.R
 import co.photopon.application.GlideApp
 import co.photopon.main.gifts.GiftViewModel
-import com.twilio.client.impl.TwilioImpl.context
+//import com.twilio.client.impl.TwilioImpl.context
 import kotlinx.android.synthetic.main.item_coupon.view.*
 
 class MakeViewPagerAdapter(context: Context,
