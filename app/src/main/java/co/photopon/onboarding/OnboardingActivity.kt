@@ -11,6 +11,7 @@ import co.photopon.R
 import co.photopon.application.PhotoponActivity
 import co.photopon.main.MainActivity
 import co.photopon.onboarding.verify.VerifyNumberActivity
+import com.uxcam.UXCam
 import kotlinx.android.synthetic.main.activity_onboarding.*
 
 class OnboardingActivity : PhotoponActivity(), LocationPermissionFragment.OnPermissionRequested,
@@ -27,6 +28,9 @@ class OnboardingActivity : PhotoponActivity(), LocationPermissionFragment.OnPerm
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
+
     setContentView(R.layout.activity_onboarding)
 
     pagerAdapter = OnboardingPagerAdapter(supportFragmentManager)

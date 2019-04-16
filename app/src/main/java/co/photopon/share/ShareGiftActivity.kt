@@ -11,6 +11,7 @@ import co.photopon.extensions.mainApplication
 import co.photopon.friends.*
 import com.parse.ParseFile
 import com.parse.ParseObject
+import com.uxcam.UXCam
 import kotlinx.android.synthetic.main.activity_share_gift.*
 import javax.inject.Inject
 
@@ -21,6 +22,9 @@ class ShareGiftActivity : PhotoponActivity(), ShareGiftView {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
+
     setContentView(R.layout.activity_share_gift)
 
     mainApplication.appComponent().plus(ShareGiftModule(this)).inject(this)

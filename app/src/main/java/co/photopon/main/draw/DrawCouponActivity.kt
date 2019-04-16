@@ -18,6 +18,7 @@ import co.photopon.extensions.fromDpsToPixels
 import co.photopon.extensions.mainApplication
 import co.photopon.main.gifts.GiftViewModel
 import co.photopon.share.ShareGiftActivity
+import com.uxcam.UXCam
 import kotlinx.android.synthetic.main.activity_draw_coupon.*
 import kotlinx.android.synthetic.main.popup_color.view.*
 import kotlinx.android.synthetic.main.popup_stroke.view.*
@@ -39,6 +40,9 @@ class DrawCouponActivity : PhotoponActivity(), DrawCouponView {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
+
     setContentView(R.layout.activity_draw_coupon)
 
     mainApplication.appComponent().plus(DrawCouponModule(this)).inject(this)

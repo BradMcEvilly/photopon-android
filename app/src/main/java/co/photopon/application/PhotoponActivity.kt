@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import co.photopon.R
+import com.uxcam.UXCam
 
 abstract class PhotoponActivity : AppCompatActivity() {
 
@@ -14,6 +15,8 @@ abstract class PhotoponActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
 
     if (isFullscreen()) {
       window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN

@@ -12,6 +12,7 @@ import android.text.TextWatcher
 import co.photopon.R
 import co.photopon.application.PhotoponActivity
 import co.photopon.extensions.mainApplication
+import com.uxcam.UXCam
 import kotlinx.android.synthetic.main.activity_add_friend.*
 import javax.inject.Inject
 
@@ -22,6 +23,9 @@ class AddFriendActivity : PhotoponActivity(), AddFriendView {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
+
     setContentView(R.layout.activity_add_friend)
 
     mainApplication.appComponent().plus(AddFriendModule(this)).inject(this)

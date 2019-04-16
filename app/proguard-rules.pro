@@ -73,3 +73,9 @@
 
 
 -dontwarn org.slf4j.**
+
+# UXCam
+-keep class com.uxcam.** { *; }
+-dontwarn com.uxcam.**
+
+

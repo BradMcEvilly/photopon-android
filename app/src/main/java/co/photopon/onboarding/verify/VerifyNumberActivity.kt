@@ -11,6 +11,7 @@ import co.photopon.onboarding.verify.VerifyPagerAdapter.Companion.PAGE_SENDING_C
 import co.photopon.onboarding.verify.VerifyPagerAdapter.Companion.PAGE_VERIFY_CODE
 import co.photopon.onboarding.verify.VerifyPagerAdapter.Companion.PAGE_VERIFY_PHONE
 import co.photopon.onboarding.verify.VerifyPagerAdapter.Companion.PAGE_WELCOME_BACK
+import com.uxcam.UXCam
 import kotlinx.android.synthetic.main.activity_validate_phone.*
 import javax.inject.Inject
 
@@ -26,6 +27,9 @@ class VerifyNumberActivity : PhotoponActivity(), VerifyNumberView,
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
+
     setContentView(R.layout.activity_validate_phone)
 
     mainApplication.appComponent().plus(VerifyNumberModule(this)).inject(this)

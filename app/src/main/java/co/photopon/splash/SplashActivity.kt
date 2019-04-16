@@ -6,6 +6,7 @@ import co.photopon.R
 import co.photopon.main.MainActivity
 import co.photopon.onboarding.OnboardingActivity
 import com.parse.ParseUser
+import com.uxcam.UXCam
 import java.util.*
 import kotlin.concurrent.timerTask
 
@@ -13,6 +14,9 @@ class SplashActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
+
     setContentView(R.layout.activity_splash)
 
     Timer().schedule(timerTask { nextActivity() }, 500)

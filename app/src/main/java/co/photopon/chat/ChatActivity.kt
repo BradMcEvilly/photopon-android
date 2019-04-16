@@ -6,6 +6,7 @@ import android.os.Bundle
 import co.photopon.R
 import co.photopon.application.PhotoponActivity
 import co.photopon.friends.UserViewModel
+import com.uxcam.UXCam
 import kotlinx.android.synthetic.main.activity_chat.*
 
 class ChatActivity : PhotoponActivity() {
@@ -15,6 +16,8 @@ class ChatActivity : PhotoponActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
 
     setContentView(R.layout.activity_chat)
 

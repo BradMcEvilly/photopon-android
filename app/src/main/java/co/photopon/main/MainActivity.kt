@@ -15,6 +15,7 @@ import co.photopon.main.gifts.GiftsFragment
 import co.photopon.main.make.MakePhotoponFragment
 import co.photopon.main.notifications.NotificationsFragment
 import co.photopon.settings.SettingsActivity
+import com.uxcam.UXCam
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 
@@ -25,6 +26,9 @@ class MainActivity : PhotoponActivity(), MakePhotoponFragment.MakePhotoponListen
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    UXCam.startWithKey("1p78vfc6zdrv4cx")
+
     setContentView(R.layout.activity_main)
 
     val selectedPage = intent.getIntExtra(EXTRA_PAGE, PAGE_PHOTOPON)
@@ -34,6 +38,13 @@ class MainActivity : PhotoponActivity(), MakePhotoponFragment.MakePhotoponListen
     view_pager.currentItem = Int.MAX_VALUE / 5 + selectedPage
 
     ib_settings.setOnClickListener { onSettingsClicked() }
+
+    bt_menu_notifications.setOnClickListener { onNotificationsClicked() }
+
+
+
+
+
   }
 
   override fun isFullscreen(): Boolean {
@@ -94,6 +105,48 @@ class MainActivity : PhotoponActivity(), MakePhotoponFragment.MakePhotoponListen
     closeDrawer()
     startActivity(SettingsActivity.getIntent(this))
     slideUp()
+  }
+
+  private fun onNotificationsClicked() {
+    closeDrawer()
+//    startActivity(SettingsActivity.getIntent(this))
+//    slideUp()
+  }
+
+  private fun onFriendsClicked() {
+    closeDrawer()
+//    startActivity(SettingsActivity.getIntent(this))
+//    slideUp()
+  }
+
+  private fun onCouponsClicked() {
+    closeDrawer()
+//    startActivity(SettingsActivity.getIntent(this))
+//    slideUp()
+  }
+
+  private fun onWalletClicked() {
+    closeDrawer()
+//    startActivity(SettingsActivity.getIntent(this))
+//    slideUp()
+  }
+
+  private fun onCreatePhotoponClicked() {
+    closeDrawer()
+//    startActivity(SettingsActivity.getIntent(this))
+//    slideUp()
+  }
+
+  private fun onSentPhotoponsClicked() {
+    closeDrawer()
+//    startActivity(SettingsActivity.getIntent(this))
+//    slideUp()
+  }
+
+  private fun onSignOutClicked() {
+    closeDrawer()
+//    startActivity(SettingsActivity.getIntent(this))
+//    slideUp()
   }
 
   companion object {
